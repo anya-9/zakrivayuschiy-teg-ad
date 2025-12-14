@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/animations.css" />
-    <link rel="icon" href="./images/favicon.ico" sizes="'any" />
+    <link rel="icon" href="./images/favicon.ico" sizes="any" />
     <link rel="icon" href="./svg/favicon.svg" type="image/svg+xml" />
     <link rel="mobile-icon" href="./images/favicon.png" />
   </head>
@@ -52,7 +52,7 @@
               aria-label="Поставить лайк"
             >
               <svg
-                class="like-icon" 
+                class="like-icon"
                 width="39"
                 height="36"
                 viewBox="0 0 39 36"
@@ -548,33 +548,38 @@
           </div>
         </div>
       </article>
-      <button
-  class="save-button button"
-  type="button"
-  onclick="window['dialog-floppy'].showModal();"
-  aria-controls="dialog-floppy"
->
-  <svg class="button__icon" width="20" height="20" aria-hidden="true">
-    <use href="./svg/floppy.svg#floppy"></use>
-  </svg>
-  <span class="button__text">Сохранить на память</span>
-</button>
-
-<dialog class="dialog" id="dialog-floppy">
-  <div class="dialog__content">
-    <div class="dialog__inner">
-      <svg viewBox="0 0 40 40" class="dialog__icon">
+    </main>
+    <button
+      class="save-button button"
+      type="button"
+      onclick="window['dialog-floppy'].showModal();"
+      aria-controls="dialog-floppy"
+    >
+      <svg class="button__icon" width="20" height="20" aria-hidden="true">
         <use href="./svg/floppy.svg#floppy"></use>
       </svg>
-      <span class="dialog__text">Вставьте дискету, чтобы продолжить</span>
-    </div>
-    <div class="ok__dialog-button">
-      <button class="button" type="button" onclick="window['dialog-floppy'].close();">
-        <span class="button__text">OK</span>
-      </button>
-    </div>
-  </div>
-</dialog>
+      <span class="button__text">Сохранить на память</span>
+    </button>
+
+    <dialog class="dialog" id="dialog-floppy">
+      <div class="dialog__content">
+        <div class="dialog__inner">
+          <svg viewBox="0 0 40 40" class="dialog__icon">
+            <use href="./svg/floppy.svg#floppy"></use>
+          </svg>
+          <span class="dialog__text">Вставьте дискету, чтобы продолжить</span>
+        </div>
+        <div class="ok__dialog-button">
+          <button
+            class="button"
+            type="button"
+            onclick="window['dialog-floppy'].close();"
+          >
+            <span class="button__text">OK</span>
+          </button>
+        </div>
+      </div>
+    </dialog>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
