@@ -42,7 +42,7 @@
   text-wrap: nowrap;
 }
 
-.main {
+main {
   display: flex;
   gap: var(--card-gap);
   background-color: var(--bg-color);
@@ -51,43 +51,43 @@
   justify-content: center;
 }
 
-.card {
+section {
   width: 100%;
   outline: 2px solid var(--main-color);
 }
 
-.card__image-container {
+.card-image {
   position: relative;
   background-color: grey;
 }
 
-.card__image--filter-1 {
+.first-picture {
   filter: saturate(35%) contrast(85%) brightness(90%) sepia(30%)
     hue-rotate(-10deg) grayscale(15%);
 }
 
-.card__image--filter-2 {
+.second-picture {
   filter: brightness(108%) contrast(95%) saturate(362%) hue-rotate(360deg);
 }
 
-.card__image--filter-7 {
+.seventh-picture {
   filter: blur(2px) brightness(96%) hue-rotate(98deg) saturate(141%)
     contrast(55%);
 }
 
-.card__image--filter-6 {
+.sixth-picture {
   filter: blur(15px);
 }
 
-.card__image--filter-5 {
+.fifth-picture {
   filter: sepia(100%);
 }
 
-.card__image--filter-4 {
+.fourth-picture {
   filter: invert(76%);
 }
 
-.card__image--filter-3 {
+.third-picture {
   filter: hue-rotate(31deg) saturate(128%) contrast(107%);
 }
 
@@ -96,7 +96,7 @@
   font-weight: var(--extra-bold-font-weight);
 }
 
-.card__image {
+.section__card-image {
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
@@ -106,7 +106,7 @@
   z-index: 0;
 }
 
-.card__label {
+.card-label {
   position: absolute;
   font-family: var(--accent-font);
   font-size: var(--accent-font-size);
@@ -120,7 +120,7 @@
   color: white;
 }
 
-.card__content {
+.card-text {
   display: flex;
   flex-direction: column;
   gap: 27px;
@@ -131,14 +131,14 @@
   (text-stroke: 1px var(--main-color)) or
     (-webkit-text-stroke: 1px var(--main-color))
 ) {
-  .card__label {
+  .card-label {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--main-color);
     text-stroke: 1px var(--main-color);
   }
 }
 
-.card__actions {
+.button-container {
   display: flex;
   align-self: end;
   gap: 12px;
@@ -149,7 +149,7 @@
   height: var(--button-height);
 }
 
-.button {
+.animated-button {
   border: 2px solid var(--main-color);
   display: flex;
   justify-content: center;
@@ -162,7 +162,7 @@
   background-color: var(--bg-color);
 }
 
-.button::before {
+.animated-button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -171,15 +171,15 @@
   translate: -100%;
 }
 
-.button:hover::before {
+.animated-button:hover::before {
   translate: 0%;
 }
 
-.button:focus {
+.animated-button:focus {
   outline: none;
 }
 
-.button:focus-visible {
+.animated-button:focus-visible {
   box-shadow: 2px 2px var(--main-color);
 }
 
@@ -191,12 +191,21 @@
   position: relative;
 }
 
-.button__icon {
+.floppy-svg {
   mix-blend-mode: difference;
   fill: white;
   inline-size: 21px;
   block-size: 21px;
   z-index: 1;
+}
+
+.floppy_svg {
+  fill: white;
+  color: #fff;
+  background-color: transparent;
+  mix-blend-mode: difference;
+  inline-size: 39px;
+  block-size: 39px;
 }
 
 .card__icon-button {
@@ -217,7 +226,7 @@
   border: 2px solid var(--main-color);
 }
 
-.save-button {
+.dialog-button {
   width: 335px;
   height: 55px;
   gap: 8px;
@@ -241,20 +250,20 @@ dialog::backdrop {
   background-color: var(--bg-color);
 }
 
-.dialog__content {
+.dialog-container {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.dialog__inner {
+.dialog-item {
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 20px;
 }
 
-.dialog__text {
+.dialog-text {
   max-inline-size: 234px;
 }
 
@@ -273,13 +282,13 @@ dialog::backdrop {
     padding: 120px 14px;
   }
 
-  .save-button {
+  .dialog-button {
     width: 306px;
     height: 84px;
     flex-direction: column;
   }
 
-  .button__icon {
+  .floppy-svg {
     inline-size: 28px;
     block-size: 28px;
   }
@@ -288,12 +297,12 @@ dialog::backdrop {
     padding: 32px 40px;
   }
 
-  .card__label {
+  .card-label {
     top: 25px;
     right: 11px;
   }
 
-  .dialog__text {
+  .dialog-text {
     max-inline-size: 198px;
   }
 }
