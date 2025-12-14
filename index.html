@@ -548,19 +548,22 @@
           </div>
         </div>
       </article>
+      <button
+        class="save-button button"
+        type="button"
+        onclick="window['dialog-floppy'].showModal();"
+        aria-controls="dialog-floppy"
+      >
+        <svg class="button__icon" viewBox="0 0 44 44">
+          <use href="./svg/floppy.svg#floppy"></use>
+        </svg>
+        <span class="button__text">Сохранить на память</span>
+      </button>
     </main>
-<div class="save-section">
-  <button class="save-button button" type="button" onclick="window['dialog-floppy'].showModal(); return false;">
-    <svg class="button__icon" width="20" height="20" aria-hidden="true">
-      <use href="./svg/floppy.svg#floppy"></use>
-    </svg>
-    <span class="button__text">Сохранить на память</span>
-  </button>
-</div>
     <dialog class="dialog" id="dialog-floppy">
       <div class="dialog__content">
         <div class="dialog__inner">
-          <svg viewBox="0 0 40 40" class="dialog__icon">
+          <svg viewBox="0 0 40 40" class="button__icon">
             <use href="./svg/floppy.svg#floppy"></use>
           </svg>
           <span class="dialog__text">Вставьте дискету, чтобы продолжить</span>
@@ -569,8 +572,7 @@
           <button
             class="button"
             type="button"
-            method="dialog"
-            onclick="window['dialog-floppy'].close(); return false;"
+            onclick="window['dialog-floppy'].close();"
           >
             <span class="button__text">OK</span>
           </button>
